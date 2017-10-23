@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public Animator anim;
     public GameObject hitEffect;
 
+    Interactable interactable;
+
     int health;
     bool isDead;
 
@@ -26,6 +28,8 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         spawnManager = GameObject.Find("GameManager").GetComponent<SpawnManager>();
+
+        interactable = GetComponent<Interactable>();
         col = GetComponent<Collider>();
         ai = GetComponent<AI>();
     }
@@ -50,6 +54,7 @@ public class Health : MonoBehaviour
     {
         isDead = true;
         col.enabled = false;
+        interactable.enabled = false;
         Instantiate(blood, transform.position, transform.rotation);
         spawnManager.RemoveEnemy(gameObject);
         agent.isStopped = true;

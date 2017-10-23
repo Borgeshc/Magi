@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
         primaryAttack = Input.GetKey(KeyCode.Mouse0);
         secondaryAttack = Input.GetKey(KeyCode.Mouse1);
 
-        canMove = !Input.GetKey(KeyCode.LeftShift);
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //    canMove = false;
+        //else
+        //    canMove = true;
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

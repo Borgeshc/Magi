@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f86fbf9b18d0ff04db0d15b0e1681947
+timeCreated: 1508788510
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gaposis Outline BRK
+  fontNames:
+  - Gaposis Outline BRK
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
