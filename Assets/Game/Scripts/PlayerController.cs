@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         combat = GetComponent<PlayerCombat>();
 
         baseSpeed = agent.speed;
+        Time.timeScale = 1;
     }
 
     private void Update()
