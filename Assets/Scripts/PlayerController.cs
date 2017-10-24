@@ -34,10 +34,16 @@ public class PlayerController : MonoBehaviour
         primaryAttack = Input.GetKey(KeyCode.Mouse0);
         secondaryAttack = Input.GetKey(KeyCode.Mouse1);
 
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //    canMove = false;
-        //else
-        //    canMove = true;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            print("StopMoving");
+            canMove = false;
+        }
+        else
+        {
+            print("StartMoving");
+            canMove = true;
+        }
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -79,12 +85,12 @@ public class PlayerController : MonoBehaviour
             agent.speed = baseSpeed;
             FaceTarget();
         }
-        else if (!canMove)
-        {
-            agent.speed = 0;
-            agent.SetDestination(transform.position);
-            agent.velocity = Vector3.zero;
-        }
+        //else if (!canMove)
+        //{
+        //    agent.speed = 0;
+        //    agent.SetDestination(transform.position);
+        //    agent.velocity = Vector3.zero;
+        //}
     }
 
     void MoveToPoint(Vector3 point)

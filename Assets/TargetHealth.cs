@@ -5,10 +5,12 @@ using UnityEngine;
 public class TargetHealth : MonoBehaviour
 {
     public List<GameObject> cubes;
+    public GameObject title;
 
     public int maxHealth;
 
     int health;
+    bool isDead;
     Animator anim;
 
     private void Start()
@@ -21,8 +23,22 @@ public class TargetHealth : MonoBehaviour
     {
         health--;
 
-        if (health < 0) return;
+        if (health < 0 && !isDead)
+        {
+            isDead = true;
+            StartCoroutine(Died());
+        }
+        else
         anim.SetTrigger("Damaged");
+    }
+
+    IEnumerator Died()
+    {
+        yield return new WaitForSeconds(1);
+        title.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 0;
     }
 
     public void ThrowCube()
