@@ -6,6 +6,7 @@ public class TargetHealth : MonoBehaviour
 {
     public List<GameObject> cubes;
     public GameObject title;
+    public Animator killCounter;
 
     public int maxHealth;
 
@@ -36,6 +37,7 @@ public class TargetHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         title.SetActive(true);
+        killCounter.enabled = true;
 
         yield return new WaitForSeconds(1);
         Time.timeScale = 0;
